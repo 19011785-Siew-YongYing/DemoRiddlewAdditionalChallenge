@@ -1,3 +1,4 @@
+
 package sg.edu.rp.c346.id19011785.demoriddle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,7 @@ public class AnswerActivity1 extends AppCompatActivity {
     TextView tvAns;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { // modified for additional challenge
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer1);
         Log.d("AnswerActivity1", "onCreate() called.");
@@ -21,9 +22,15 @@ public class AnswerActivity1 extends AppCompatActivity {
         String qnsSelected = intentReceived.getStringExtra("Question");
 
         tvAns= findViewById(R.id.answerView);
-        tvAns.setText(qnsSelected + " Answer is: Queue");
+        if (qnsSelected.equalsIgnoreCase("Q1")){
+            tvAns.setText(qnsSelected + " Answer is: Queue");
+        }
+        else{
+            tvAns.setText(qnsSelected + " Answer is: Gone");
+        }
     }
 
+    // For learning Activity Lifecycle Using LogCat
     @Override
     protected void onStart() {
         Log.d("AnswerActivity1", "onStart() called.");

@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
         btnRevealQ2 = findViewById(R.id.revealBtn2);
         btnRevealQ2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AnswerActivity2.class);
-                intent.putExtra("Question", "Q2");
-                startActivity(intent);
+            public void onClick(View v) { // modified for the additional challenge
+                Intent intent2 = new Intent(MainActivity.this, AnswerActivity1.class);
+                intent2.putExtra("Question", "Q2");
+                startActivity(intent2);
             }
         });
     }
